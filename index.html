@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Independent Bookstore Events</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+
+  <header class="header">
+    <div class="title" aria-label="page-title">
+      <h1>Independent Bookstore Events</h1>
+      <p class="subtitle">Manage your bookstore events efficiently</p>
+    </div>
+  </header>
+
+  <div class="heading" aria-label="form-head">
+      <h2 class="form-heading">Add New Event</h2>
+  </div>
+
+  <form id="event-form" aria-label="form" >
+    <div class="form-group">
+      <label for="event-title">Event Title <span aria-hidden="true">*</span></label>
+      <input type="text" id="event-title" name="event-title" required placeholder="Enter event title">
+      <span id="title-error" ></span>
+    </div>
+
+    <div class="form-group">
+      <label for="event-author">Author<span aria-hidden="true">*</span></label>          <input type="text" id="event-author" name="author" required placeholder="Enter author name">  
+      <span id="author-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="event-date">Event Date <span aria-hidden="true">*</span></label>
+      <input type="date" id="event-date" name="date"  required>
+      <span id="date-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="event-time">Event Time <span aria-hidden="true">*</span></label>
+      <input type="time" id="event-time" name="time" required >
+      <span id="time-error"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="event-description">Description</label>
+      <textarea id="event-description" name="description" rows="3" placeholder="Enter event description (optional)"  ></textarea> 
+      <span id="description-error"></span>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" id="submit-button">
+        <span class="button-text">Add Event</span>
+      </button>
+    </div>
+  </form>
+
+  <div class="card" aria-label="search-card">
+    <h2 id="search-heading" class="search-heading">Search Events</h2>
+    <div class="search-container">
+      <label for="search-input" class="search-input">Search</label>
+      <input type="search" id="search-input" placeholder="Search by title, author, or date">
+      <span id="search-results" ></span>
+    </div>
+  </div>
+
+  <div class="events-headle" aria-label="events-headle">
+    <h2 id="events-heading" class="events-heading">Upcoming Events</h2>
+    <div id="loading-indicator" class="loading-indicator" hidden>
+      <div class="loading-spinner"></div>
+    </div>
+  </div>
+
+  <div id="no-search-results" aria-label="no-search-results" hidden>
+    <h3>No data found</h3>
+  </div>
+
+  <ul id="events-list" class="events-list" aria-label="Event list"></ul>    
+
+  <script src="script.js"></script>
+
+</body>
+</html>
